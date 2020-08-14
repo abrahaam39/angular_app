@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="panel panel-primary">
+      <div class="panel panel-heading">
+        <h3>Infos personnels</h3>
+       </div>
+      <div class="panel-body>">
+        <ul class="list-group">
+           <li class="list-group-item">Nom : {{info.nom}}</li>
+           <li class="list-group-item">Email : {{info.email}}</li>
+           <li class="list-group-item">Tel : {{info.tel}}</li>
+        </ul>
+
+        <ul class="list-group">
+          <h4>Commentaires</h4>
+          <li *ngFor=" let c of comments" class="list-group-item">
+
+           {{c.message}}:<span class="badge">{{c.date|date:'dd/MM/yyyy:hh:mm:ss'}}</span>
+          </li>
+
+        </ul>
+        <div>
+        <div class="form-group">
+          <label class="control-label">taper votre commentaire</label>
+          <input  [(style.backgroundColor)]="color" type="text" /><br>
+          <label class="control-label">Message : </label>
+           <input  #input1   type="text"  [(ngModel)]="commentaire.message"/>
+           <button [disabled]="!commentaire.message" (click)="comm()" class="btn btn-success">valider</button>
+        </div>
+           <p>le couleur est {{color}}</p>
+
+
+            <select  #select (change)="colorer(select.value)">
+              <option value="white">white</option>
+              <option value="red">rouge</option>
+              <option value="blue">blue</option>
+              <option value="black">noir</option>
+              <option value="green">vert</option>
+             <option value="beige">beige</option>
+             <option value="yellow">jaune</option>
+            </select>
+        </div>
+
+      </div>
+    </div>
+</div>

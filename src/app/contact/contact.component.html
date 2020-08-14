@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class=" panel-heading">
+       <h3>Commentaires</h3>
+    </div>
+    <div class="panel-body">
+       <div>
+         <div class="form-group">
+          <label class="control-label">taper votre commentaire</label><br>
+
+          <input type="text" [(ngModel)]="commentaire.messages">
+          <button [disabled]="!commentaire.messages" class="btn btn-success" (click)="com()">envoyer</button>
+         </div>
+       </div>
+      <ul class="list-group">
+        <li *ngFor="let c of comment" class="list-group-item">
+          {{c.id}}:<span class="badge badge-primary">{{c.messages}}</span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
